@@ -45,7 +45,7 @@ import './App.css';
                         <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                             <Navbar/>
                         </div>
-                </div>
+                
                 {/* Div for routing */}
                 <div>
                     <Routes>
@@ -75,7 +75,7 @@ import './App.css';
                     
                     </Routes>
                 </div>
-
+                </div>
             </div>
         </BrowserRouter>
     </div>
