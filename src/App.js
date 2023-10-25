@@ -1,17 +1,17 @@
-import React,{useEffect} from 'react'
+import React,{useContext, useEffect} from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { Navbar,Footer,Sidebar,ThemeSettings} from '../src/components';
 import {Ecommerce,Orders,Line,Calendar,Employees,Stacked,Pyramid,Customers,Area,Kanban,
-Bar,Pie,Financial,ColorMapping,ColorPicker,Editor}
- from './pages';
+Bar,Pie,Financial,ColorMapping,ColorPicker,Editor}from './pages';
+import { useStateContext } from './context/ContextProvider';
 import './App.css';
 
 
 
  const App = () => {
-    const activeMenu=true;
+    const {activeMenu}= useStateContext();
   return (
     <div>
         <BrowserRouter>
@@ -28,7 +28,7 @@ import './App.css';
                 {/* SideBar */}
                 {activeMenu ?(
                     // active sidebar
-                    <div className='w-72 fixed dark:bg-secondary-dark-bg  bg-white '>
+                    <div className={`w-72 fixed dark:bg-secondary-dark-bg  bg-white `}>
                         <Sidebar/>
                     </div>
                 ):(  //side bar not active 
@@ -44,7 +44,6 @@ import './App.css';
                     }>
                         <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                             <Navbar/>
-
                         </div>
                 </div>
                 {/* Div for routing */}
