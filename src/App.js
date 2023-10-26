@@ -39,7 +39,7 @@ import './App.css';
 
                 {/* Navigation Bar*/}
                 <div className={
-                    `dark:bg-main-bg bg-main-bg min-h-screen w-full 
+                    `dark:bg-main-bg bg-main-bg  min-h-screen w-full 
                     ${activeMenu ? ' md:ml-72 l': 'flex-2 '}`
                     }>
                         <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
@@ -47,7 +47,7 @@ import './App.css';
                         </div>
                 
                 {/* Div for routing */}
-                <div>
+                   <div>
                     <Routes>
                         {/* Dashboard  */}
                         <Route path='/' element={<Ecommerce/>}/>
@@ -74,7 +74,7 @@ import './App.css';
                         <Route path='/Stacked' element={<Stacked/>} />
                     
                     </Routes>
-                </div>
+                   </div>
                 </div>
             </div>
         </BrowserRouter>
