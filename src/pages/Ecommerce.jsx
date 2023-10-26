@@ -1,12 +1,12 @@
 import React from 'react';
 import { GoDotFill } from 'react-icons/go';
-import { BsCurrencyDollar } from 'react-icons/bs';
 import { Stacked, SparkLine, Pie } from '../components';
 import { Button } from '../components';
 import { useStateContext } from '../context/ContextProvider';
-import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import { earningData,SparklineAreaData, ecomPieChartData } from '../data/dummy';
 
-const Ecommerce = () => {
+const   Ecommerce = () => {
+  const{ currentColor}=useStateContext();
   return (
     <div className="mt-24">
       <div className="flex flex-wrap lg:flex-nowrap justify-center ">
@@ -21,7 +21,7 @@ const Ecommerce = () => {
           <div className='mt-6'>
             <Button
               color='white'
-              bgColor="blue"
+              bgColor={currentColor}
               text='Download'
               borderRadius='10px'
               size='md'
@@ -89,12 +89,12 @@ const Ecommerce = () => {
                   <p className="text-gray-500 mt-1">Expense</p>
                 </div>
                 <div className="mt-5">
-                  <SparkLine currentColor="blue" id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color="blue" />
+                  <SparkLine currentColor id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={currentColor} />
                 </div>
                 <div className="mt-10">
                   <Button
                     color="white"
-                    bgColor="Blue"
+                    bgColor={currentColor}
                     text="Download Report"
                     borderRadius="10px"
                   />
@@ -109,7 +109,7 @@ const Ecommerce = () => {
         <div>
           <div
             className=" rounded-2xl md:w-400 p-4 m-3"
-            style={{ backgroundColor: "blue" }}
+            style={{ backgroundColor: currentColor}}
           >
             <div className="flex justify-between items-center ">
               <p className="font-semibold text-white text-2xl">Earnings</p>
@@ -121,7 +121,7 @@ const Ecommerce = () => {
             </div>
 
             <div className="mt-4">
-              <SparkLine currentColor="blue" id="column-sparkLine" height="100px" type="Column" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)" />
+              <SparkLine currentColor={currentColor} id="column-sparkLine" height="100px" type="Column" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)" />
             </div>
           </div>
 

@@ -11,7 +11,7 @@ import { useStateContext } from '../context/ContextProvider';
 import { FiShoppingCart } from 'react-icons/fi';
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu,isClicked,setIsClicked,handleClick,screenSize,setScreenSize } = useStateContext();
+  const { activeMenu, setActiveMenu,isClicked,handleClick,screenSize,setScreenSize,currentColor } = useStateContext();
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
   // handling screen size 
@@ -48,25 +48,25 @@ const Navbar = () => {
     <div className='flex justify-between p-2 md:mx-2 relative'>
       <NavButton title="Menu"
         customFunc={handleActiveMenu}
-        color="Blue"
+        color={currentColor}
         icon={<AiOutlineMenu />} />
       {/* All Buttons */}
       <div className='flex '>
         <NavButton title="Cart"
           customFunc={()=>handleClick('cart')}
-          color="Blue"
+          color={currentColor}
           icon={<FiShoppingCart />} 
         />
         <NavButton title="Chat"
           dotcolor="#03C9D7"
           customFunc={()=>handleClick('chat')}
-          color="Blue"
+          color={currentColor}
           icon={<BsChatLeft />} 
         />
         <NavButton title="Notification"
           customFunc={()=>handleClick('notification')}
           dotcolor="#03C9D7"
-          color="Blue"
+          color={currentColor}
           icon={<RiNotification3Line />} 
         />
         <TooltipComponent content="Profie" position='BottomCenter'>
