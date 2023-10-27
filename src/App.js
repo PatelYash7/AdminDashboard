@@ -49,7 +49,7 @@ import './App.css';
                         </div>
                 
                 {/* Div for routing */}
-                   <div>
+                   <div className=' z-10 '>
                    {themeSettings && <ThemeSettings/>}
                     <Routes>
                         

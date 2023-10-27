@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { cartData } from "../data/dummy";
@@ -8,6 +8,13 @@ import Button from "./Button";
 
 const Cart = () => {
   const { handleClick,currentColor  } = useStateContext();
+  const[item1,setItem1]=useState(1);
+  const incr=()=>{
+    setItem1(item1+1);
+  }
+  const dcr=()=>{
+    setItem1(item1-1);
+  }
 
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
@@ -36,15 +43,15 @@ const Cart = () => {
                   <div className="flex gap-4 mt-2 items-center">
                     <p className="font-semibold text-lg">{item.price}</p>
                     <div className="flex items-center border-1 border-r-0 border-color rounded">
-                      <p className="p-2 border-r-1 dark:border-gray-600 border-color text-red-600 ">
+                      <button onClick={dcr}className="p-2 border-r-1 dark:border-gray-600 border-color text-red-600 ">
                         <AiOutlineMinus />
-                      </p>
+                      </button>
                       <p className="p-2 border-r-1 border-color dark:border-gray-600 text-green-600">
-                        0
+                        {item1}
                       </p>
-                      <p className="p-2 border-r-1 border-color dark:border-gray-600 text-green-600">
+                      <button onClick={incr}className="p-2 border-r-1 border-color dark:border-gray-600 text-green-600">
                         <AiOutlinePlus />
-                      </p>
+                      </button>
                     </div>
                   </div>
                 </div>

@@ -11,7 +11,11 @@ import { useStateContext } from '../context/ContextProvider';
 import { FiShoppingCart } from 'react-icons/fi';
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu,isClicked,handleClick,screenSize,setScreenSize,currentColor } = useStateContext();
+  const { activeMenu, setActiveMenu,isClicked,handleClick,screenSize,setScreenSize,currentColor,handleProfile,
+    profile,
+    handleChat,
+    handleNotification,
+    chat,notification } = useStateContext();
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
   // handling screen size 
@@ -59,19 +63,20 @@ const Navbar = () => {
         />
         <NavButton title="Chat"
           dotcolor="#03C9D7"
-          customFunc={()=>handleClick('chat')}
+          // customFunc={()=>handleClick('chat')}
+          customFunc={handleChat}
           color={currentColor}
           icon={<BsChatLeft />} 
         />
         <NavButton title="Notification"
-          customFunc={()=>handleClick('notification')}
+          customFunc={handleNotification}
           dotcolor="#03C9D7"
           color={currentColor}
           icon={<RiNotification3Line />} 
         />
         <TooltipComponent content="Profie" position='BottomCenter'>
             <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg'
-              onClick={()=>handleClick('userProfile')}
+              onClick={handleProfile}
             >
               <img src={avatar} alt='hell' className='rounded-full w-8 h-8' />
               <p>
@@ -82,9 +87,9 @@ const Navbar = () => {
             </div>
         </TooltipComponent>
         {isClicked.cart && <Cart/>}
-        {isClicked.chat && <Chat/>}
-        {isClicked.notification && <Notification/>}
-        {isClicked.userProfile && <UserProfile/>}
+        {chat && <Chat/>}
+        {notification && <Notification/>}
+        {profile && <UserProfile/>}
       </div>
     </div>
   )
