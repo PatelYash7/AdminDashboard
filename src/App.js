@@ -30,7 +30,7 @@ import './App.css';
                 {/* SideBar */}
                 {activeMenu ?(
                     // active sidebar
-                    <div className={`w-72 fixed dark:bg-secondary-dark-bg z-1000 bg-white `}>
+                    <div className={`w-72  z-50 fixed dark:bg-secondary-dark-bg  bg-white `}>
                         <Sidebar/>
                     </div>
                 ):(  //side bar not active 
@@ -49,7 +49,7 @@ import './App.css';
                         </div>
                 
                 {/* Div for routing */}
-                   <div className=' z-10 '>
+                   <div className=' '>
                    {themeSettings && <ThemeSettings/>}
                     <Routes>
                         
@@ -68,7 +68,7 @@ import './App.css';
                         <Route path='/calendar' element={<Calendar/>} />
                         <Route path='/color-picker' element={<ColorPicker/>} />
                         {/* Charts */}
-                        <Route path='/line' element={<Line/>} />
+                        <Route  path='/line' element={<Line/>} />
                         <Route path='/area' element={<Area/>} />
                         <Route path='/bar' element={<Bar/>} />
                         <Route path='/pie' element={<Pie/>} />
@@ -76,7 +76,6 @@ import './App.css';
                         <Route path='/color-mapping' element={<ColorMapping/>} />
                         <Route path='/pyramid' element={<Pyramid/>} />
                         <Route path='/Stacked' element={<Stacked/>} />
-                    
                     </Routes>
                    </div>
                 </div>

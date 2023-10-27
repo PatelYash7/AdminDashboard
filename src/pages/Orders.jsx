@@ -6,7 +6,7 @@ import { Header } from '../components';
 const Orders = () => {
   const editing = { allowDeleting: true, allowEditing: true };
   return (
-    <div className="m-2 md:m-8 mt-12 p-1 md:p-6 bg-white rounded-3xl">
+    <div className="m-2 md:m-8 mt-12 p-1 md:p-6  bg-white rounded-3xl">
       <Header category="Page" title="Orders" />
       <GridComponent
         id="gridcomp"
@@ -17,6 +17,7 @@ const Orders = () => {
         allowPdfExport
         contextMenuItems={contextMenuItems}
         editSettings={editing}
+        // style={{zIndex:1}}
        
       >
         <ColumnsDirective>
