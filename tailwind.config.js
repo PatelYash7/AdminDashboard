@@ -40,7 +40,7 @@ module.exports = {
         },
         backgroundImage: {
           'hero-pattern':
-            "url('https://sneat-vuetify-admin-template.vercel.app/assets/illustration-john-light-0061869a.png')",
+            "url('../src/data/welcome-bg.svg')",
         },
       },
     },
