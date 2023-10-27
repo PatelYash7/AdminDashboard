@@ -30,7 +30,7 @@ import './App.css';
                 {/* SideBar */}
                 {activeMenu ?(
                     // active sidebar
-                    <div className={`w-72 fixed dark:bg-secondary-dark-bg  bg-white `}>
+                    <div className={`w-72 fixed dark:bg-secondary-dark-bg z-1000 bg-white `}>
                         <Sidebar/>
                     </div>
                 ):(  //side bar not active 
