@@ -38,8 +38,6 @@ export const ContextProvider = ({ children }) => {
         setNotification(false)
         setProfile(false)
     }
-
-
     const handleClick = (clicked) => {
         setIsClicked({ ...initialState, [clicked]: true })
         setProfile(false)
